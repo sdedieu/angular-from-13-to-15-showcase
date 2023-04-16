@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 const routes: Routes = [
-    { path: 'statistics', loadChildren: async () => (await import('./statistics/statistics.module')).StatisticsModule },
-    { path: 'users-management', loadChildren: async () => (await import('./users-management/users-management.module')).UsersManagementModule },
+    { path: 'statistics', loadChildren: async () => (await import('./planets-statistics/planets-statistics.module')).PlanetsStatisticsModule },
+    { path: 'forbidden', component: ForbiddenComponent },
     { path: '', redirectTo: 'statistics', pathMatch: 'full' }
 ]
 

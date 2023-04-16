@@ -1,0 +1,30 @@
+
+<h2 mat-dialog-title>Filter Planet Table</h2>
+<form [formGroup]="planetFilterForm" (ngSubmit)="applyFilter()">
+    <mat-dialog-content>
+        <!-- Section 'climate' -->
+        <mat-form-field appearance="outline">
+            <mat-label>Climate</mat-label>
+            <mat-select multiple formControlName="climates">
+                <mat-option *ngFor="let climate of climateList$ | async" [value]="climate">
+                    {{climate | titlecase}}
+                </mat-option>
+            </mat-select>
+            <mat-icon matSuffix>sunny</mat-icon>
+        </mat-form-field>
+        <!-- Section 'terrain' -->
+        <mat-form-field appearance="outline">
+            <mat-label>Terrain</mat-label>
+            <mat-select formControlName="terrains" multiple>
+                <mat-option *ngFor="let terrain of terrainList$ | async" [value]="terrain">
+                    {{terrain | titlecase}}
+                </mat-option>
+            </mat-select>
+            <mat-icon matSuffix>landscape</mat-icon>
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button cdkFocusInitial type="submit">Create</button>
+    </mat-dialog-actions>
+</form>

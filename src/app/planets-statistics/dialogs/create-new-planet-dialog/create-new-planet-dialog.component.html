@@ -1,0 +1,64 @@
+<h2 mat-dialog-title>Create a new Planet</h2>
+<form [formGroup]="newPlanetForm" (ngSubmit)="create()">
+    <mat-dialog-content>
+        <!-- Section 'name' -->
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Mandalore" formControlName="name">
+            <mat-icon matSuffix>public</mat-icon>
+            <mat-hint>Planet name must be unique</mat-hint>
+            <mat-error *ngIf="newPlanetForm.get('name').invalid">{{getErrorMessage}}</mat-error>
+        </mat-form-field>
+        <!-- Section 'population' -->
+        <mat-form-field appearance="outline">
+            <mat-label>Population (in B)</mat-label>
+            <input type="number" matInput placeholder="12" formControlName="population">
+            <mat-icon matSuffix>groups</mat-icon>
+        </mat-form-field>
+        <!-- Section 'diameter' -->
+        <mat-form-field appearance="outline">
+            <mat-label>Diameter</mat-label>
+            <input type="number" matInput placeholder="360" formControlName="diameter">
+            <mat-icon matSuffix>open_in_full</mat-icon>
+            <mat-hint>(in kilometers)</mat-hint>
+        </mat-form-field>
+        <!-- Section 'rotation_period' -->
+        <mat-form-field appearance="outline">
+            <mat-label>Rotation Period</mat-label>
+            <input type="number" matInput placeholder="3" formControlName="rotation_period">
+            <mat-icon matSuffix>update</mat-icon>
+            <mat-hint>(in days)</mat-hint>
+        </mat-form-field>
+        <!-- Section 'gravity' -->
+        <mat-form-field appearance="outline">
+            <mat-label>Gravity</mat-label>
+            <input type="number" matInput placeholder="1.2" formControlName="gravity">
+            <mat-icon matSuffix>vertical_align_bottom</mat-icon>
+            <mat-hint>(in g)</mat-hint>
+        </mat-form-field>
+        <!-- Section 'climate' -->
+        <mat-form-field appearance="outline">
+            <mat-label>Climate</mat-label>
+            <mat-select multiple formControlName="climate">
+                <mat-option *ngFor="let climate of climateList$ | async" [value]="climate">
+                    {{climate | titlecase}}
+                </mat-option>
+            </mat-select>
+            <mat-icon matSuffix>sunny</mat-icon>
+        </mat-form-field>
+        <!-- Section 'terrain' -->
+        <mat-form-field appearance="outline">
+            <mat-label>Terrain</mat-label>
+            <mat-select formControlName="terrain" multiple>
+                <mat-option *ngFor="let terrain of terrainList$ | async" [value]="terrain">
+                    {{terrain | titlecase}}
+                </mat-option>
+            </mat-select>
+            <mat-icon matSuffix>landscape</mat-icon>
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button cdkFocusInitial [disabled]="newPlanetForm.invalid" type="submit">Create</button>
+    </mat-dialog-actions>
+</form>

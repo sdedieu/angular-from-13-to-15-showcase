@@ -1,0 +1,20 @@
+<section id="graph-section">
+    <app-planets-graph [planets]="populatedPlanets$ | async">
+        <mat-spinner class="progress-spinner" *ngIf="planetsLoading$ | async"></mat-spinner>
+    </app-planets-graph>
+</section>
+<section id="add-planet-section">
+    <button mat-flat-button color="primary" (click)="openCreateNewPanetDialog()">        
+        <mat-icon>add</mat-icon>
+        Add Planet
+    </button>
+</section>
+<section id="filter-planet-section">
+    <button mat-flat-button color="primary" (click)="openPanetsFilterDialog()">        
+        <mat-icon>tune</mat-icon>
+        Filter
+    </button>
+</section>
+<section id="planets-table-section">
+    <app-planets-table [planets]="planets$ | async" (removePlanet)="removePlanet($event)"></app-planets-table>
+</section>
