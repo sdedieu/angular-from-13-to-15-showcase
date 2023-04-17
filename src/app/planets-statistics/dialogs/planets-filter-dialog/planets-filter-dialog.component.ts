@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Select } from '@ngxs/store';
 import { Observable, Subject, takeUntil } from 'rxjs';
@@ -21,10 +21,10 @@ export class PlanetsFilterDialogComponent implements OnInit, OnDestroy {
 
   destroy$ = new Subject<void>();
 
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<PlanetsFilterDialogComponent>) {
-    this.planetFilterForm = this.fb.group({
-      climates: [[]],
-      terrains: [[]],
+  constructor(private dialogRef: MatDialogRef<PlanetsFilterDialogComponent>) {
+    this.planetFilterForm = new FormGroup({
+      climates: new FormControl([]),
+      terrains: new FormControl([]),
     })
 
   }
