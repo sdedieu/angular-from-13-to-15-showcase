@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, NgZone, OnChanges, SimpleChanges } from '@angular/core';
-import { Planet } from 'src/app/shared/models/planet';
-import { DataAggregator } from 'src/app/shared/utils/data-aggregator';
+import { Planet } from '../../../app/shared/models/planet';
+import { DataAggregator } from '../../../app/shared/utils/data-aggregator';
 
 declare const Plotly: any;
 

@@ -1,7 +1,5 @@
 import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/forms';
-import { Select, Store } from '@ngxs/store';
-import { Observable, first, map, tap } from 'rxjs';
-import { GalaxyState } from 'src/app/+state/galaxy.state';
+import { Observable, first, map } from 'rxjs';
 import { PlanetDto } from '../models/planet';
 
 
