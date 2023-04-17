@@ -3,9 +3,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { GalaxyState } from 'src/app/+state/galaxy.state';
-import { Planet, PlanetDto } from 'src/app/shared/models/planet';
-import { PlanetNameValidator } from 'src/app/shared/validators/planet-name.validator';
+import { GalaxyState } from '../../../../app/+state/galaxy.state';
+import { Planet, PlanetDto } from '../../../../app/shared/models/planet';
+import { PlanetNameValidator } from '../../../../app/shared/validators/planet-name.validator';
 
 @Component({
   selector: 'app-create-new-planet-dialog',

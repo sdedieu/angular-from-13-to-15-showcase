@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { HttpClientModule } from '@angular/common/http';
 import { NgxsModule } from '@ngxs/store';
 
-import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment';
 import { GalaxyState } from './+state/galaxy.state';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 

@@ -2,7 +2,7 @@ import { AfterViewInit, EventEmitter, Component, Input, OnChanges, Output, Simpl
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Planet } from 'src/app/shared/models/planet';
+import { Planet } from '../../../app/shared/models/planet';
 
 @Component({
   selector: 'app-planets-table',

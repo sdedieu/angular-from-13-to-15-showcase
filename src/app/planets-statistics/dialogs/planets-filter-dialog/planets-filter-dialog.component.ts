@@ -3,8 +3,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Select } from '@ngxs/store';
 import { Observable, Subject, takeUntil } from 'rxjs';
-import { GalaxyState } from 'src/app/+state/galaxy.state';
-import { PlanetsFilters } from 'src/app/shared/models/planets-filters';
+import { GalaxyState } from '../../../../app/+state/galaxy.state';
+import { PlanetsFilters } from '../../../../app/shared/models/planets-filters';
 
 @Component({
   selector: 'app-planets-filter-dialog',
