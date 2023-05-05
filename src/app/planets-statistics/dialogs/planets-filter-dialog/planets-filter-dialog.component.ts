@@ -1,15 +1,23 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
-import { MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
+import { UntypedFormGroup, UntypedFormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatLegacyDialogRef as MatDialogRef, MatLegacyDialogModule } from '@angular/material/legacy-dialog';
 import { Select } from '@ngxs/store';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { GalaxyState } from '../../../../app/+state/galaxy.state';
 import { PlanetsFilters } from '../../../../app/shared/models/planets-filters';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatLegacyOptionModule } from '@angular/material/legacy-core';
+import { NgFor, AsyncPipe, TitleCasePipe } from '@angular/common';
+import { MatLegacySelectModule } from '@angular/material/legacy-select';
+import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
 
 @Component({
-  selector: 'app-planets-filter-dialog',
-  templateUrl: './planets-filter-dialog.component.html',
-  styleUrls: ['./planets-filter-dialog.component.css']
+    selector: 'app-planets-filter-dialog',
+    templateUrl: './planets-filter-dialog.component.html',
+    styleUrls: ['./planets-filter-dialog.component.css'],
+    standalone: true,
+    imports: [MatLegacyDialogModule, ReactiveFormsModule, MatLegacyFormFieldModule, MatLegacySelectModule, NgFor, MatLegacyOptionModule, MatIconModule, MatLegacyButtonModule, AsyncPipe, TitleCasePipe]
 })
 export class PlanetsFilterDialogComponent implements OnInit, OnDestroy {
 

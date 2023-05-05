@@ -7,18 +7,16 @@ import { PlanetClimatePipe } from './pipes/planet-climate.pipe';
 
 
 @NgModule({
-  declarations: [
-    PlanetPopulationPipe,
-    PlanetTerrainPipe,
-    PlanetClimatePipe
-  ],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    PlanetPopulationPipe,
-    PlanetTerrainPipe,
-    PlanetClimatePipe
-  ]
+    imports: [
+        CommonModule,
+        PlanetPopulationPipe,
+        PlanetTerrainPipe,
+        PlanetClimatePipe
+    ],
+    exports: [
+        PlanetPopulationPipe,
+        PlanetTerrainPipe,
+        PlanetClimatePipe
+    ]
 })
 export class SharedModule { }

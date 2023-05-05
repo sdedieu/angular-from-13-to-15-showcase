@@ -8,8 +8,8 @@ describe('PlanetsTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlanetsTableComponent ]
-    })
+    imports: [PlanetsTableComponent]
+})
     .compileComponents();
   });
 

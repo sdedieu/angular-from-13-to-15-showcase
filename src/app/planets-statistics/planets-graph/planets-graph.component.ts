@@ -42,10 +42,11 @@ const layout = {
 const config = { responsive: true, displayModeBar: false };
 
 @Component({
-  selector: 'app-planets-graph',
-  templateUrl: './planets-graph.component.html',
-  styleUrls: ['./planets-graph.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-planets-graph',
+    templateUrl: './planets-graph.component.html',
+    styleUrls: ['./planets-graph.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true
 })
 export class PlanetsGraphComponent implements OnChanges {
 

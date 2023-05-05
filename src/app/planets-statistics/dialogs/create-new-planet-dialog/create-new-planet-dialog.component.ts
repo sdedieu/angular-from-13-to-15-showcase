@@ -1,16 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
-import { MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
+import { UntypedFormControl, UntypedFormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { MatLegacyDialogRef as MatDialogRef, MatLegacyDialogModule } from '@angular/material/legacy-dialog';
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { GalaxyState } from '../../../../app/+state/galaxy.state';
 import { Planet, PlanetDto } from '../../../../app/shared/models/planet';
 import { PlanetNameValidator } from '../../../../app/shared/validators/planet-name.validator';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { MatLegacyOptionModule } from '@angular/material/legacy-core';
+import { MatLegacySelectModule } from '@angular/material/legacy-select';
+import { NgIf, NgFor, AsyncPipe, TitleCasePipe } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatLegacyInputModule } from '@angular/material/legacy-input';
+import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
 
 @Component({
-  selector: 'app-create-new-planet-dialog',
-  templateUrl: './create-new-planet-dialog.component.html',
-  styleUrls: ['./create-new-planet-dialog.component.css']
+    selector: 'app-create-new-planet-dialog',
+    templateUrl: './create-new-planet-dialog.component.html',
+    styleUrls: ['./create-new-planet-dialog.component.css'],
+    standalone: true,
+    imports: [MatLegacyDialogModule, ReactiveFormsModule, MatLegacyFormFieldModule, MatLegacyInputModule, MatIconModule, NgIf, MatLegacySelectModule, NgFor, MatLegacyOptionModule, MatLegacyButtonModule, AsyncPipe, TitleCasePipe]
 })
 export class CreateNewPlanetDialogComponent implements OnInit {
 

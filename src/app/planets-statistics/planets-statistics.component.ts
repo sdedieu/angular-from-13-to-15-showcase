@@ -7,15 +7,23 @@ import { MatLegacyDialog as MatDialog, MatLegacyDialogConfig as MatDialogConfig 
 import { CreateNewPlanetDialogComponent } from './dialogs/create-new-planet-dialog/create-new-planet-dialog.component';
 import { PlanetsFilterDialogComponent } from './dialogs/planets-filter-dialog/planets-filter-dialog.component';
 import { PlanetsFilters } from '../shared/models/planets-filters';
+import { PlanetsTableComponent } from './planets-table/planets-table.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { MatLegacyProgressSpinnerModule } from '@angular/material/legacy-progress-spinner';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { PlanetsGraphComponent } from './planets-graph/planets-graph.component';
 
 const dialogConfig: MatDialogConfig = {
   width: '75%'
 }
 
 @Component({
-  selector: 'app-planets-statistics',
-  templateUrl: './planets-statistics.component.html',
-  styleUrls: ['./planets-statistics.component.css']
+    selector: 'app-planets-statistics',
+    templateUrl: './planets-statistics.component.html',
+    styleUrls: ['./planets-statistics.component.css'],
+    standalone: true,
+    imports: [PlanetsGraphComponent, NgIf, MatLegacyProgressSpinnerModule, MatLegacyButtonModule, MatIconModule, PlanetsTableComponent, AsyncPipe]
 })
 export class PlanetsStatisticsComponent implements OnInit {
 

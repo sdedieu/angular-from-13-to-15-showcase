@@ -17,25 +17,23 @@ import { GalaxyState } from './+state/galaxy.state';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ForbiddenComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    NgxsModule.forRoot([GalaxyState], {
-      developmentMode: !environment.production
-    })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatListModule,
+        MatButtonModule,
+        NgxsModule.forRoot([GalaxyState], {
+            developmentMode: !environment.production
+        }),
+        ForbiddenComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

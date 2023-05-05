@@ -8,8 +8,8 @@ describe('CreateNewPlanetDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateNewPlanetDialogComponent ]
-    })
+    imports: [CreateNewPlanetDialogComponent]
+})
     .compileComponents();
   });
 
