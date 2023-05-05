@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
@@ -18,7 +18,7 @@ export class CreateNewPlanetDialogComponent implements OnInit {
   @Select(GalaxyState.terrains) terrainList$: Observable<string[]>;
   @Select(GalaxyState.planets) planets$: Observable<PlanetDto[]>;
 
-  newPlanetForm: FormGroup;
+  newPlanetForm: UntypedFormGroup;
 
   get getErrorMessage(): string {
     if (this.newPlanetForm.get('name').hasError('required'))
@@ -29,17 +29,17 @@ export class CreateNewPlanetDialogComponent implements OnInit {
   }
 
   constructor(private dialogRef: MatDialogRef<CreateNewPlanetDialogComponent>) {
-    this.newPlanetForm = new FormGroup({
-      name: new FormControl('',
+    this.newPlanetForm = new UntypedFormGroup({
+      name: new UntypedFormControl('',
         [Validators.required],
         [PlanetNameValidator.createValidator(this.planets$)]
       ),
-      population: new FormControl(null),
-      diameter: new FormControl(null),
-      rotation_period: new FormControl(null),
-      gravity: new FormControl(null),
-      climate: new FormControl([]),
-      terrain: new FormControl([])
+      population: new UntypedFormControl(null),
+      diameter: new UntypedFormControl(null),
+      rotation_period: new UntypedFormControl(null),
+      gravity: new UntypedFormControl(null),
+      climate: new UntypedFormControl([]),
+      terrain: new UntypedFormControl([])
     })
 
   }
