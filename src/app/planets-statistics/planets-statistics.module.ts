@@ -22,28 +22,26 @@ import { PlanetsGraphComponent } from './planets-graph/planets-graph.component';
 
 
 @NgModule({
-  declarations: [
-    PlanetsStatisticsComponent,
-    PlanetsTableComponent,
-    CreateNewPlanetDialogComponent,
-    PlanetsFilterDialogComponent,
-    PlanetsGraphComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    ReactiveFormsModule,
-    PlanetsStatisticsRoutingModule,
-    MatProgressSpinnerModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDialogModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    MatInputModule
-  ]
+    imports: [
+        CommonModule,
+        SharedModule,
+        ReactiveFormsModule,
+        PlanetsStatisticsRoutingModule,
+        MatProgressSpinnerModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatButtonModule,
+        MatIconModule,
+        MatDialogModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        MatInputModule,
+        PlanetsStatisticsComponent,
+        PlanetsTableComponent,
+        CreateNewPlanetDialogComponent,
+        PlanetsFilterDialogComponent,
+        PlanetsGraphComponent
+    ]
 })
 export class PlanetsStatisticsModule { }

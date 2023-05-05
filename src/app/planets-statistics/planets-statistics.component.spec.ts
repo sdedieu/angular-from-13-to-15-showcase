@@ -8,8 +8,8 @@ describe('PlanetsStatisticsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlanetsStatisticsComponent ]
-    })
+    imports: [PlanetsStatisticsComponent]
+})
     .compileComponents();
   });
 
