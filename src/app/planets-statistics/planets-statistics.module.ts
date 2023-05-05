@@ -5,7 +5,7 @@ import { PlanetsTableComponent } from './planets-table/planets-table.component';
 import { MatLegacyProgressSpinnerModule as MatProgressSpinnerModule } from '@angular/material/legacy-progress-spinner';
 import { PlanetsStatisticsRoutingModule } from './planets-statistics-routing.module';
 import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
-import { SharedModule } from '../shared/shared.module';
+
 import { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
@@ -23,25 +23,24 @@ import { PlanetsGraphComponent } from './planets-graph/planets-graph.component';
 
 @NgModule({
     imports: [
-        CommonModule,
-        SharedModule,
-        ReactiveFormsModule,
-        PlanetsStatisticsRoutingModule,
-        MatProgressSpinnerModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatButtonModule,
-        MatIconModule,
-        MatDialogModule,
-        MatSelectModule,
-        MatFormFieldModule,
-        MatInputModule,
-        PlanetsStatisticsComponent,
-        PlanetsTableComponent,
-        CreateNewPlanetDialogComponent,
-        PlanetsFilterDialogComponent,
-        PlanetsGraphComponent
-    ]
+    CommonModule,
+    ReactiveFormsModule,
+    PlanetsStatisticsRoutingModule,
+    MatProgressSpinnerModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    PlanetsStatisticsComponent,
+    PlanetsTableComponent,
+    CreateNewPlanetDialogComponent,
+    PlanetsFilterDialogComponent,
+    PlanetsGraphComponent
+]
 })
 export class PlanetsStatisticsModule { }
