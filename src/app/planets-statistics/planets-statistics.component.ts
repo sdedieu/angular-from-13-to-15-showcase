@@ -3,7 +3,7 @@ import { AddPlanet, GalaxyState, RemovePlanet, UpdatePlanetsFilters } from '../+
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Planet } from '../shared/models/planet';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogConfig as MatDialogConfig } from '@angular/material/legacy-dialog';
 import { CreateNewPlanetDialogComponent } from './dialogs/create-new-planet-dialog/create-new-planet-dialog.component';
 import { PlanetsFilterDialogComponent } from './dialogs/planets-filter-dialog/planets-filter-dialog.component';
 import { PlanetsFilters } from '../shared/models/planets-filters';
